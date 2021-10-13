@@ -7,12 +7,14 @@ let hasBlackJack = false;
 
 let message = "";
 let messageEl = document.getElementById("message-el");
-let sumEl = document.querySelector("#sum-el");
-//let sumEl = document.getElementById("sum-el");
+//let sumEl = document.querySelector("#sum-el");
+let sumEl = document.getElementById("sum-el");
+let cardsEl = document.getElementById("cards-el");
 
 let isAlive = true;
 
 function startGame(){
+  cardsEl.textContent = "Cards: " + firstCard + " " + secondCard;
   sumEl.textContent = "Sum: " + sum;
   console.log("btn clicked");
   if (sum < 21){
