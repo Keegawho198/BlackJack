@@ -1,18 +1,29 @@
 console.log("Javascript connected");
 
-
 let firstCard = 20;
 let secondCard = 1;
-
 let sum = firstCard + secondCard;
-
+let hasBlackJack = false;
 //console.log(sum);
 
+let isAlive = true;
+let message = "";
 
 if (sum < 21){
-  console.log("Do you want to draw a new card?");
+  message = "Draw a new card?";
+  
 } else if(sum === 21){
-  console.log("You got BlackJack!");
+  message = "You got BlackJack!"
+  hasBlackJack = true;
+  
 } else {
-  console.log("You are out of the game");
+  message = "you went over 21";
+  isAlive = false;
 }
+
+console.log(message);
+
+function startGame(){
+  console.log("btn clicked");
+} 
+
