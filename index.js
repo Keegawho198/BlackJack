@@ -1,6 +1,6 @@
 console.log("Javascript connected");
 
-let firstCard = 20;
+let firstCard = 17;
 let secondCard = 1;
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
@@ -32,3 +32,12 @@ function startGame(){
   messageEl.textContent = message;
 } 
 
+function newCard(){
+  console.log("Draw card");
+  //create a card variable, hard code value (2-11)
+  //add the new sum value to card
+  //call startGame()
+  let card = 3;
+  sum = card + sum;
+  startGame();
+}
