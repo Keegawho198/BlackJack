@@ -1,7 +1,7 @@
 console.log("Javascript connected");
 
-let firstCard = 17;
-let secondCard = 1;
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();;
 let cards = [firstCard, secondCard]; //array ordered list of items
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
@@ -12,6 +12,11 @@ let messageEl = document.getElementById("message-el");
 //let sumEl = document.querySelector("#sum-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
+
+//create reandom card, use function to set values of cards
+function getRandomCard(){
+  return 5;
+}
 
 function startGame(){
   renderGame();
@@ -49,7 +54,7 @@ function newCard(){
   //create a card variable, hard code value (2-11)
   //add the new sum value to card
   //call startGame()
-  let card = 3;
+  let card = getRandomCard();
   sum += card;
   cards.push(card);
   console.log(cards);
