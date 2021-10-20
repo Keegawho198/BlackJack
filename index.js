@@ -5,7 +5,7 @@ let secondCard = getRandomCard();;
 let cards = [firstCard, secondCard]; //array ordered list of items
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 
 let message = "";
 let messageEl = document.getElementById("message-el");
@@ -13,16 +13,37 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
+let player = {
+  name : "Keegan",
+  chips : 100
+}
+
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = player.name + ": $" + player.chips;
+
 //create reandom card, use function to set values of cards
 function getRandomCard(){
-  //return 5;
-  return Math.floor( Math.random() * 13) + 1; // 1-13
-  // return randomNumber;
+  
+  let randomNumber = Math.floor( Math.random() * 13) + 1; // 1-13
+
+  if(randomNumber > 10){
+    return 10; //cards like jack,queen and king
+  } else if(randomNumber === 1){
+    return 11; //for ace card
+  } else{
+    return randomNumber;
+  }
 
 
 }
 
 function startGame(){
+  isAlive = true;
+  let firstCard = getRandomCard();
+  let secondCard = getRandomCard();
+  cards = [firstCard, secondCard];
+  sum = firstCard + secondCard;
+
   renderGame();
 }
 
@@ -55,14 +76,16 @@ function renderGame(){
 
 function newCard(){
   console.log("Draw card");
-  //create a card variable, hard code value (2-11)
-  //add the new sum value to card
-  //call startGame()
-  let card = getRandomCard();
-  sum += card;
-  cards.push(card);
-  console.log(cards);
-  renderGame();
+  
+  if(isAlive === true && hasBlackJack === false){
+    let card = getRandomCard();
+    sum += card;
+    cards.push(card);
+    console.log(cards);
+    renderGame();
+  }
+  
+
 }
 
 
@@ -76,13 +99,13 @@ function newCard(){
 // let randomNumber = Math.floor( Math.random() * 6) + 1;
 // console.log(randomNumber);
 
-function rollDice(){
-  //dice function
-let randomNumber = Math.floor( Math.random() * 6) + 1;
-return randomNumber;
-}
+// function rollDice(){
+//   //dice function
+// let randomNumber = Math.floor( Math.random() * 6) + 1;
+// return randomNumber;
+// }
 
-console.log(rollDice());
+// console.log(rollDice());
 
 
 
