@@ -13,13 +13,22 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
-let player = {
-  name : "Keegan",
-  chips : 100
-}
+// let player = {
+//   name : testName,
+//   chips : 100
+// }
 
+//Player enters name
+var testName = window. prompt("Enter your name: "); 
+alert("Welcome to BlackJack " + testName);
 let playerEl = document.getElementById("player-el");
-playerEl.textContent = player.name + ": $" + player.chips;
+playerEl.textContent = testName + " Is Playing";
+
+// + ": $" + player.chips;
+
+
+
+
 
 //create reandom card, use function to set values of cards
 function getRandomCard(){
