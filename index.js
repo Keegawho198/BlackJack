@@ -15,7 +15,11 @@ let cardsEl = document.getElementById("cards-el");
 
 //create reandom card, use function to set values of cards
 function getRandomCard(){
-  return 5;
+  //return 5;
+  return Math.floor( Math.random() * 13) + 1; // 1-13
+  // return randomNumber;
+
+
 }
 
 function startGame(){
@@ -60,3 +64,30 @@ function newCard(){
   console.log(cards);
   renderGame();
 }
+
+
+
+
+
+
+
+
+//dice function
+// let randomNumber = Math.floor( Math.random() * 6) + 1;
+// console.log(randomNumber);
+
+function rollDice(){
+  //dice function
+let randomNumber = Math.floor( Math.random() * 6) + 1;
+return randomNumber;
+}
+
+console.log(rollDice());
+
+
+
+
+
+
+
+
